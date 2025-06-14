@@ -1,2 +1,2 @@
-# -kipu-bank
+# kipu-bank
  Smart contract KipuBank
