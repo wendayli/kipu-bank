@@ -55,10 +55,17 @@ Haz clic en Deploy - Cómo Interactuar con el Contrato
 
         Después del despliegue, puedes usar las siguientes funciones:
 
-deposit() - Deposita ETH en la bóveda del usuario. Usa el campo "Value" en Remix.
-withdraw(uint256 amount) - Retira ETH, hasta el límite permitido (máximo 1 ether).
-getBalance(address user) - Devuelve el balance almacenado del usuario (en wei).
-getStats() - Devuelve estadísticas globales: número de depósitos y retiros.
+deposit() - 
+Deposita ETH en la bóveda del usuario. Usa el campo "Value" en Remix.
+
+withdraw(uint256 amount) - 
+Retira ETH, hasta el límite permitido (máximo 1 ether).
+
+getBalance(address user) - 
+Devuelve el balance almacenado del usuario (en wei).
+
+getStats() - 
+Devuelve estadísticas globales: número de depósitos y retiros.
 
 🧪 Ejemplo Paso a Paso
 1. Depósito inicial
@@ -75,12 +82,17 @@ getStats() - Devuelve estadísticas globales: número de depósitos y retiros.
     Debería mostrar: 500000000000000000
 
     ⚠️ Errores Personalizados
+
 El contrato lanza mensajes claros si no se cumplen condiciones:
 
-WithdrawalExceedsLimit(...): Si intentas retirar más de 1 ETH.
-InsufficientBalance(...): Si no tienes suficiente balance.
-DepositExceedCap(...): Si el banco ya alcanzó su límite de 1000 ETH.
-NoBalanceToWithdraw(): Si intentas retirar sin haber depositado antes.
+WithdrawalExceedsLimit(...): 
+Si intentas retirar más de 1 ETH.
+InsufficientBalance(...): 
+Si no tienes suficiente balance.
+DepositExceedCap(...): 
+Si el banco ya alcanzó su límite de 1000 ETH.
+NoBalanceToWithdraw():
+Si intentas retirar sin haber depositado antes.
 
 
 ## ⚙️ Contrato
