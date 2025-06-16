@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity 0.8.30;
+pragma solidity  ^0.8.24;
 
 //BANCO SEGURO DESENTRALIZADO PARA DEPOSITOS Y RETIROS ETH
 //@AUTOR Wensdy Pamela Sanchez Carranza. 
@@ -16,7 +16,7 @@ contract KipuBank {
     
     // === MAPPINGS ===
     /// @notice  Declaracion de un mapping asociado a direcciones con balance por cada usuario (almacenado en wei)
-    mapping (address => uint256 ) public _balances;
+    mapping (address => uint256 ) private _balances;
 
      // === VARIABLES DE STORAGE ===
 
@@ -39,6 +39,9 @@ contract KipuBank {
     
     // error cuando se intenta retirar sin fondo
     error NoBalanceToWithdraw();
+
+    // error cuando la transferencia falla.
+    error TransferFailed();
 
     // === EVENTOS ===
 
@@ -117,7 +120,7 @@ contract KipuBank {
         (bool success,) = payable(user).call{value:amount}("");
 
           // Verificar que la transferencia fue exitosa
-        require(success , "No se pudo enviar el valor de retiro a la cuenta del usuario");
+       if (!success) revert TransferFailed(); // ← Error personalizado
 
         // Emitir evento indicando que el retiro se completó
         emit Withdrawal(user, amount);
