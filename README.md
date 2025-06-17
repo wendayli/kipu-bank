@@ -53,7 +53,7 @@ Injected Provider - MetaMask para redes reales
 Haz clic en Deploy - Cómo Interactuar con el Contrato
 
 
-        Después del despliegue, puedes usar las siguientes funciones:
+    Después del despliegue, puedes usar las siguientes funciones:
 
 deposit() - 
 Deposita ETH en la bóveda del usuario. Usa el campo "Value" en Remix.
